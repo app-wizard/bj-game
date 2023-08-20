@@ -1,0 +1,156 @@
+/* ========== VARIABLES ========== */
+:root {
+    --white-color: #ffffff;
+    --text-color: #ffffff;
+    --hover-color: #9e11e9d8;
+
+    --btn-bg-color: #373e579d;
+    --btn-bg-hover-color:#6a0b9dd8;
+
+  
+
+    --logo-font: "Raleway", sans-serif;
+    --main-font: "Poppins", sans-serif;
+}
+
+/* ========== /VARIABLES ========== */
+
+/* ========== GLOBAL ========== */
+.list {
+    list-style-type: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul,
+ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+img {
+    display: block;
+}
+
+body {
+    font-family: var(--main-font);
+    color: var(--text-color);
+    background-color: var(--white-color);
+    color: var(--white-color);
+}
+
+/* ========== END GLOBAL ========== */
+
+/* ========== HEADER ========== */
+
+.header-container {
+    display: flex;
+    z-index: 2;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background-color: transparent;
+  }
+  
+  .main-nav {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .main-nav a {
+    font-size: 18px;
+    color: var(--white-color);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .main-nav a:hover {
+    color: var(--hover-color);
+  }
+  
+  .logo {
+    font-family: var(--logo-font);
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--white-color);
+    filter: drop-shadow(0 0 5px var(--hover-color));
+  }
+  
+  /* ========== END HEADER ========== */
+  
+  /* ========== MAIN ========== */
+  
+  .main {
+    min-height: 100vh;
+    background-image: url("../image/main-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .hero-story {
+    max-width: 40%;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-family: var(--logo-font);
+    font-size: 55px;
+    text-transform: capitalize;
+    font-weight: 800;
+    color: var(--white-color);
+    filter: drop-shadow(0 0 5px var(--hover-color));
+  }
+  
+  .new-game-btn {
+    height: 55px;
+    width: 200px;
+    background-color: var(--btn-bg-color);
+    border: 2px solid var(--white-color);
+    box-shadow: 0 0 12px var(--hover-color);
+    border-radius: 10px;
+    outline: none;
+    font-size: 18px;
+    color: var(--white-color);
+    transition: background-color 0.3s;
+  }
+
+  .new-game-btn:hover {
+    background-color: var(--btn-bg-hover-color);
+  }
+  /* ========== END MAIN ========== */
+  
