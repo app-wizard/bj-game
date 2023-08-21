@@ -9,7 +9,8 @@
   --btn-bg-hover-color: #6a0b9dd8;
   --btn-golg-border:rgba(245, 222, 179, 1);
 
-
+  --cardHeight: 175px;
+  --cardWidth: 125px;
 
   --logo-font: "Raleway", sans-serif;
   --main-font: "Poppins", sans-serif;
@@ -272,8 +273,8 @@ body {
 }
 
 .dealer-cards img {
-  height: 175px;
-  width: 125px;
+  height: var(--cardHeight);
+  width: var(--cardWidth);
 }
 
 .player-cards {
@@ -285,8 +286,8 @@ body {
 }
 
 .player-cards img {
-  height: 175px;
-  width: 125px;
+  height: var(--cardHeight);
+  width: var(--cardWidth);
 }
 
 .btn-wraper {
@@ -311,12 +312,8 @@ body {
 .hit-btn:hover,
 .stay-btn:hover {
 
-  background-color: var(--btn-bg-color);
-  border: 2px solid var(--white-color);
-  box-shadow: 0 0 12px var(--hover-color);
-
   background-color: var(--green-color);
-  border: 2px solid var(----btn-golg-border);
+  border: 2px solid var(--btn-golg-border);
   text-transform: uppercase;
 }
 
