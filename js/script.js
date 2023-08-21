@@ -17,8 +17,7 @@ gotItBtn.onclick = () => {
 /* ---  New Game ---*/
 newGameBtn.onclick = () => {
   gameSection.classList.add("active");
-  setTimeout(startNewGame, 1500);
-  //startNewGame();
+  startNewGame();
 };
 
 function startNewGame() {

@@ -243,7 +243,7 @@ body {
   height: 100vh;
   background-color: var(--green-color);
   background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
-    url("../image/game-bg.jpeg");
+    url("../image/game-bg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -315,6 +315,40 @@ body {
   background-color: var(--green-color);
   border: 2px solid var(--btn-golg-border);
   text-transform: uppercase;
+}
+
+
+.count {
+  display: flex;
+  width: 250px;
+  height: 130px;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(../image/vs.jpg);
+  border-radius: 25px;
+  border: 3px solid wheat;
+}
+
+.count-dealer {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.count-player {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter {
+  font-size: 52px;
 }
 
 /* ========== END GAME SECTION ========== */
