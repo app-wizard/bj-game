@@ -352,3 +352,21 @@ body {
 }
 
 /* ========== END GAME SECTION ========== */
+
+/* ========== MOBILE ADAPTIVE ========== */
+
+@media only screen and (max-width: 900px) {
+  body {
+    --cardHeight: calc(175px*0.7);
+    --cardWidth: calc(125px*0.7);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    --cardHeight: calc(175px*0.6);
+    --cardWidth: calc(125px*0.6);
+  }
+}
+/* ========== END MOBILE ADAPTIVE ========== */
+
