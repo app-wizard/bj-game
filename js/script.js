@@ -6,6 +6,9 @@ const gameSection = document.querySelector(".game-section");
 const hitBtn = document.querySelector(".hit-btn");
 const stayBtn = document.querySelector(".stay-btn");
 const playerTableScore = document.querySelector(".player-score");
+const dealerTableScore = document.querySelector(".dealer-score");
+const gameScoreDealer = document.querySelector(".game-score-dealer");
+const gameScorePlayer = document.querySelector(".game-score-player");
 
 /* ---  Modal How to play ---*/
 howToPlayLink.onclick = () => {
@@ -25,7 +28,6 @@ newGameBtn.onclick = () => {
 
 function startNewGame() {
   console.log('-======== NEW GAME ========-');
-
   buildCards();
   dealCards();
 };
@@ -33,23 +35,20 @@ function startNewGame() {
 
 /* ---  Game Section ---*/
 let gameCards = [];
-
 let dealerScore = 0;
 let playerScore = 0;
-
 let dealerAce = 0;
 let playerAce = 0;
-
 let dealerCards = [];
 let playerCards = [];
-
 let dealerSum = 0;
 let playerSum = 0;
-
 let dealerFinalSum = 0;
 let playerFinalSum = 0;
 
 let moreThan21 = false;
+let gameOver = false;
+
 
 function buildCards() {
   let value = [
@@ -149,25 +148,48 @@ hitBtn.onclick = () => {
     if (playerFinalSum > 21) {
       moreThan21 = true;
       console.log("-************ YOU LOOSEEE *****************-");
+      gameScoreDealer.textContent = parseInt(gameScoreDealer.textContent) + 1;
+      hitBtn.textContent = "GAME OVER";
+      gameOver = true;
+      stayBtn.textContent = "NEW GAME"
     }
   };
 };
 
 stayBtn.onclick = () => {
-  console.log("stayBtn clk");
 
+  if (gameOver) {
+    clearTable();
+    startNewGame();
 
-  if ((playerFinalSum > dealerFinalSum) && (playerFinalSum <= 21)
-  ) {
-    moreThan21 = true;
-    console.log("-************ YOU WINNN *****************-");
-  } else if ((dealerFinalSum > 21) && (playerFinalSum <= 21)) {
-    moreThan21 = true;
-    console.log("-************ YOU WINNN *****************-");
   } else {
-    console.log("-************ YOU LOOSEEE *****************-");
-  }
 
+    if ((playerFinalSum > dealerFinalSum) && (playerFinalSum <= 21)
+    ) {
+      moreThan21 = true;
+      console.log("-************ YOU WINNN *****************-");
+      gameScorePlayer.textContent = parseInt(gameScorePlayer.textContent) + 1;
+    } else if ((dealerFinalSum > 21) && (playerFinalSum <= 21)) {
+      moreThan21 = true;
+      console.log("-************ YOU WINNN *****************-");
+      gameScorePlayer.textContent = parseInt(gameScorePlayer.textContent) + 1;
+    } else {
+      console.log("-************ YOU LOOSEEE *****************-");
+      gameScoreDealer.textContent = parseInt(gameScoreDealer.textContent) + 1;
+    }
+
+    document.querySelector(".back-card").src = "./image/cards/" + dealerCards[0] + ".png";
+    dealerTableScore.innerHTML = dealerFinalSum;
+    gameOver = true;
+    hitBtn.textContent = "---";
+    stayBtn.textContent = "NEW GAME"
+  }
+}
+
+
+nexGameBtn.onclick = () => {
+  clearTable();
+  startNewGame();
 }
 
 /**
@@ -217,5 +239,25 @@ function sumMinusAce(sum, aceCount) {
     }
   }
   return sum;
+}
+
+function clearTable() {
+  document.querySelector(".dealer-cards").innerHTML = '<img class="back-card" src="./image/cards/BACK.png" alt=""/>';
+  document.querySelector(".player-cards").innerHTML = "";
+  dealerTableScore.textContent = "";
+  dealerSum = 0;
+  dealerFinalSum = 0;
+  dealerAce = 0;
+  dealerCards = [];
+
+  playerSum = 0;
+  playerFinalSum = 0;
+  playerAce = 0;
+  playerCards = [];
+
+  moreThan21 = false;
+  gameOver = false;
+  stayBtn.textContent = "STAY"
+  hitBtn.textContent = "HIT";
 }
 /* ---  END Game Section ---*/
