@@ -3,6 +3,8 @@ const modal = document.querySelector(".modal");
 const gotItBtn = document.querySelector(".got-it-btn");
 const newGameBtn = document.querySelector(".new-game-btn");
 const gameSection = document.querySelector(".game-section");
+const hitBtn = document.querySelector(".hit-btn");
+const stayBtn = document.querySelector(".stay-btn");
 
 /* ---  Modal How to play ---*/
 howToPlayLink.onclick = () => {
@@ -25,8 +27,6 @@ function startNewGame() {
 
   buildCards();
   dealCards();
-
-
 };
 /* --- END New Game ---*/
 
@@ -36,12 +36,19 @@ let gameCards = [];
 let dealerScore = 0;
 let playerScore = 0;
 
+let dealerAce = 0;
+let playerAce = 0;
+
 let dealerCards = [];
 let playerCards = [];
 
 let dealerSum = 0;
 let playerSum = 0;
 
+let dealerFinalSum = 0;
+let playerFinalSum = 0;
+
+let moreThan21 = false;
 
 function buildCards() {
   let value = [
@@ -82,14 +89,18 @@ function dealCards() {
   nextCard = gameCards.pop();
   dealerCards.push(nextCard);
   dealerSum += calcValue(nextCard);
+  dealerAce += checkAce(nextCard);
+  dealerFinalSum = (dealerSum < 21)?dealerSum: sumMinusAce(dealerSum,dealerAce);
   // add diller cards
 
-  while (dealerCards.length < 2) {
+  while (dealerFinalSum < 21) {
     nextCard = gameCards.pop();
     let dealerCardImg = document.createElement("img");
     dealerCardImg.src = "./image/cards/" + nextCard + ".png";
     dealerCards.push(nextCard);
     dealerSum += calcValue(nextCard);
+    dealerAce += checkAce(nextCard);
+    dealerFinalSum = (dealerSum < 21)?dealerSum: sumMinusAce(dealerSum,dealerAce);
     document.querySelector(".dealer-cards").append(dealerCardImg);
    }
 
@@ -97,12 +108,16 @@ function dealCards() {
   console.log(dealerCards);
   console.log('-======== dealerSum ========-');
   console.log(dealerSum);
+  console.log('-======== dealerFinalSum ========-');
+  console.log(dealerFinalSum);
 
   // add player cards
   while (playerCards.length < 2) {
     nextCard = gameCards.pop();
     playerSum += calcValue(nextCard);
+    playerAce += checkAce(nextCard);
     playerCards.push(nextCard);
+    playerFinalSum = (playerSum < 21)?playerSum: sumMinusAce(playerSum,playerAce);
     let playerCardImg = document.createElement("img");
     playerCardImg.src = "./image/cards/" + nextCard + ".png";
     document.querySelector(".player-cards").append(playerCardImg);
@@ -111,6 +126,8 @@ function dealCards() {
   console.log(playerSum);
   console.log('-======== playerCards ========-');
   console.log(playerCards);
+  console.log('-======== playerFinalSum ========-');
+  console.log(playerFinalSum);
 
 }
 
@@ -146,4 +163,21 @@ function calcValue(card) {
   }
 }
 
+function checkAce(card) {
+  if (card[0] == "A") {
+    return 1;
+  }
+  return 0;
+}
+
+function sumMinusAce(sum, aceCount) {
+  while (aceCount > 0) {
+    sum = sum - 10;
+    aceCount = aceCount - 1;
+    if (sum < 21){
+        return sum;
+    }
+  }
+  return sum;
+}
 /* ---  END Game Section ---*/
