@@ -21,11 +21,13 @@ newGameBtn.onclick = () => {
 };
 
  function startNewGame () {
+  console.log('-======== NEW GAME ========-');
   buildCards();
 };
 /* --- END New Game ---*/
 
 /* ---  Game Section ---*/
+let gameCards = [];
 
 function buildCards(){
   let value = [
@@ -51,8 +53,27 @@ function buildCards(){
       cards.push(v + "-" + t);
     });
   });
-
+  console.log('-======== Cards ========-');
   console.log(cards);
+
+  gameCards = shuffleCards(cards);
+
+  console.log('-======== shuffleCards ========-');
+  console.log(gameCards);
+
 };
+
+/**
+ * Fisher-Yates Sorting Algorithm.
+ * from:
+ * https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
+ */
+function shuffleCards(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 /* ---  END Game Section ---*/
