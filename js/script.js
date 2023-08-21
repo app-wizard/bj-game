@@ -151,6 +151,7 @@ hitBtn.onclick = () => {
       gameScoreDealer.textContent = parseInt(gameScoreDealer.textContent) + 1;
       hitBtn.textContent = "GAME OVER";
       gameOver = true;
+      let moreThan21 = true;
       stayBtn.textContent = "NEW GAME"
     }
   };
@@ -184,12 +185,6 @@ stayBtn.onclick = () => {
     hitBtn.textContent = "---";
     stayBtn.textContent = "NEW GAME"
   }
-}
-
-
-nexGameBtn.onclick = () => {
-  clearTable();
-  startNewGame();
 }
 
 /**
