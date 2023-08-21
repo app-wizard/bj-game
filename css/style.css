@@ -355,23 +355,7 @@ body {
 
 /* ========== MOBILE ADAPTIVE ========== */
 
-@media only screen and (max-width: 600px) {
-  body {
-    --cardHeight: calc(175px*0.6);
-    --cardWidth: calc(125px*0.6);
 
-    count {
-      display: flex;
-      width: calc(250px*0.6);
-      height: calc(130px*0.6);
-      border-radius: calc(25px*0.6);
-      }
-    
-     .counter {
-      font-size: calc(52px*0.6);
-    }
-  }
-}
 
 @media only screen and (max-width: 990px) {
   body {
@@ -391,6 +375,23 @@ body {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    --cardHeight: calc(175px*0.5);
+    --cardWidth: calc(125px*0.5);
+
+    count {
+      display: flex;
+      width: calc(250px*0.5);
+      height: calc(130px*0.5);
+      border-radius: calc(25px*0.5);
+      }
+    
+     .counter {
+      font-size: calc(52px*0.5);
+    }
+  }
+}
 
 /* ========== END MOBILE ADAPTIVE ========== */
 
