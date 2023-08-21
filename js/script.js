@@ -5,6 +5,7 @@ const newGameBtn = document.querySelector(".new-game-btn");
 const gameSection = document.querySelector(".game-section");
 const hitBtn = document.querySelector(".hit-btn");
 const stayBtn = document.querySelector(".stay-btn");
+const playerTableScore = document.querySelector(".player-score");
 
 /* ---  Modal How to play ---*/
 howToPlayLink.onclick = () => {
@@ -90,19 +91,19 @@ function dealCards() {
   dealerCards.push(nextCard);
   dealerSum += calcValue(nextCard);
   dealerAce += checkAce(nextCard);
-  dealerFinalSum = (dealerSum < 21)?dealerSum: sumMinusAce(dealerSum,dealerAce);
+  dealerFinalSum = (dealerSum < 21) ? dealerSum : sumMinusAce(dealerSum, dealerAce);
   // add diller cards
 
-  while (dealerFinalSum < 21) {
+  while (dealerFinalSum < 17) {
     nextCard = gameCards.pop();
     let dealerCardImg = document.createElement("img");
     dealerCardImg.src = "./image/cards/" + nextCard + ".png";
     dealerCards.push(nextCard);
     dealerSum += calcValue(nextCard);
     dealerAce += checkAce(nextCard);
-    dealerFinalSum = (dealerSum < 21)?dealerSum: sumMinusAce(dealerSum,dealerAce);
+    dealerFinalSum = (dealerSum < 21) ? dealerSum : sumMinusAce(dealerSum, dealerAce);
     document.querySelector(".dealer-cards").append(dealerCardImg);
-   }
+  }
 
   console.log('-======== dealerCards ========-');
   console.log(dealerCards);
@@ -117,11 +118,12 @@ function dealCards() {
     playerSum += calcValue(nextCard);
     playerAce += checkAce(nextCard);
     playerCards.push(nextCard);
-    playerFinalSum = (playerSum < 21)?playerSum: sumMinusAce(playerSum,playerAce);
+    playerFinalSum = (playerSum <= 21) ? playerSum : sumMinusAce(playerSum, playerAce);
     let playerCardImg = document.createElement("img");
     playerCardImg.src = "./image/cards/" + nextCard + ".png";
     document.querySelector(".player-cards").append(playerCardImg);
   }
+  playerTableScore.innerHTML = playerFinalSum;
   console.log('-======== playerSum ========-');
   console.log(playerSum);
   console.log('-======== playerCards ========-');
@@ -131,6 +133,42 @@ function dealCards() {
 
 }
 
+hitBtn.onclick = () => {
+  console.log("hitBtn clk");
+  if (!moreThan21) {
+    let playerCardImg = document.createElement("img");
+    nextCard = gameCards.pop();
+    playerCardImg.src = "./image/cards/" + nextCard + ".png";
+    playerCards.push(nextCard);
+
+    playerSum += calcValue(nextCard);
+    playerAce += checkAce(nextCard);
+    playerFinalSum = (playerSum < 21) ? playerSum : sumMinusAce(playerSum, playerAce);
+    playerTableScore.innerHTML = playerFinalSum;
+    document.querySelector(".player-cards").append(playerCardImg);
+    if (playerFinalSum > 21) {
+      moreThan21 = true;
+      console.log("-************ YOU LOOSEEE *****************-");
+    }
+  };
+};
+
+stayBtn.onclick = () => {
+  console.log("stayBtn clk");
+
+
+  if ((playerFinalSum > dealerFinalSum) && (playerFinalSum <= 21)
+  ) {
+    moreThan21 = true;
+    console.log("-************ YOU WINNN *****************-");
+  } else if ((dealerFinalSum > 21) && (playerFinalSum <= 21)) {
+    moreThan21 = true;
+    console.log("-************ YOU WINNN *****************-");
+  } else {
+    console.log("-************ YOU LOOSEEE *****************-");
+  }
+
+}
 
 /**
  * Fisher-Yates Sorting Algorithm.
@@ -174,8 +212,8 @@ function sumMinusAce(sum, aceCount) {
   while (aceCount > 0) {
     sum = sum - 10;
     aceCount = aceCount - 1;
-    if (sum < 21){
-        return sum;
+    if (sum < 21) {
+      return sum;
     }
   }
   return sum;
