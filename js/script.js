@@ -3,6 +3,7 @@ const modal = document.querySelector(".modal");
 const gotItBtn = document.querySelector(".got-it-btn");
 const newGameBtn = document.querySelector(".new-game-btn");
 const gameSection = document.querySelector(".game-section");
+const sectionWraper = document.querySelector(".section-wraper");
 const hitBtn = document.querySelector(".hit-btn");
 const stayBtn = document.querySelector(".stay-btn");
 const playerTableScore = document.querySelector(".player-score");
@@ -24,7 +25,12 @@ gotItBtn.onclick = () => {
 newGameBtn.onclick = () => {
   gameSection.classList.add("active");
   startNewGame();
+  setTimeout(mobileScrolFix,1500);
 };
+
+function mobileScrolFix(){
+  sectionWraper.classList.add("active");
+}
 
 function startNewGame() {
   console.log('-======== NEW GAME ========-');
@@ -145,15 +151,17 @@ hitBtn.onclick = () => {
     playerFinalSum = (playerSum < 21) ? playerSum : sumMinusAce(playerSum, playerAce);
     playerTableScore.innerHTML = playerFinalSum;
     document.querySelector(".player-cards").append(playerCardImg);
+
     if (playerFinalSum > 21) {
       moreThan21 = true;
       console.log("-************ YOU LOOSEEE *****************-");
       gameScoreDealer.textContent = parseInt(gameScoreDealer.textContent) + 1;
       hitBtn.textContent = "GAME OVER";
       gameOver = true;
-      let moreThan21 = true;
+      moreThan21 = true;
       stayBtn.textContent = "NEW GAME"
     }
+
   };
 };
 
@@ -162,9 +170,7 @@ stayBtn.onclick = () => {
   if (gameOver) {
     clearTable();
     startNewGame();
-
   } else {
-
     if ((playerFinalSum > dealerFinalSum) && (playerFinalSum <= 21)
     ) {
       moreThan21 = true;

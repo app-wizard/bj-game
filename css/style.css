@@ -121,6 +121,11 @@ body {
   height: 100vh;
 }
 
+.section-wraper.active {
+  width: 100%;
+  display: block;
+}
+
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -180,6 +185,7 @@ body {
   transition: opacity 0.2s;
   pointer-events: none;
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 .modal-how-to-play {
