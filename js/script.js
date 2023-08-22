@@ -25,12 +25,8 @@ gotItBtn.onclick = () => {
 newGameBtn.onclick = () => {
   gameSection.classList.add("active");
   startNewGame();
-  setTimeout(mobileScrolFix,1500);
 };
 
-function mobileScrolFix(){
-  sectionWraper.classList.add("active");
-}
 
 function startNewGame() {
   console.log('-======== NEW GAME ========-');
@@ -166,7 +162,6 @@ hitBtn.onclick = () => {
 };
 
 stayBtn.onclick = () => {
-
   if (gameOver) {
     clearTable();
     startNewGame();
