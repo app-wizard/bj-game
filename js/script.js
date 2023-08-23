@@ -1,6 +1,9 @@
 const howToPlayLink = document.querySelector(".modal-lnk");
 const modal = document.querySelector(".modal");
+const topScoreLnk = document.querySelector(".topScore-lnk");
+const modalScore = document.querySelector(".modalScoreBack");
 const gotItBtn = document.querySelector(".got-it-btn");
+const gotItScoreBtn = document.querySelector(".got-it-score-btn");
 const newGameBtn = document.querySelector(".new-game-btn");
 const gameSection = document.querySelector(".game-section");
 const sectionWraper = document.querySelector(".section-wraper");
@@ -42,6 +45,16 @@ gotItBtn.onclick = () => {
   modal.classList.remove("active");
 };
 /* --- END Modal How to play ---*/
+
+/* ---  Modal TOPSCORE ---*/
+topScoreLnk.onclick = () => {
+  modalScore.classList.add("active");
+};
+
+gotItScoreBtn.onclick = () => {
+  modalScore.classList.remove("active");
+};
+/* --- END Modal TOPSCORE ---*/
 
 /* ---  New Game ---*/
 newGameBtn.onclick = () => {
