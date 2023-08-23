@@ -47,7 +47,7 @@
           </div>
         </div>
 
-        <h2>Player: <span class="player-score"></span></h2>
+        <h2> <span class="gamer"></span>: <span class="player-score"></span></h2>
         <div class="player-cards"></div>
         <div class="btn-wraper">
           <button class="hit-btn button">hit</button>
@@ -63,7 +63,12 @@
           Play now to test your luck and strategy. Win big, beat the dealer,
           and immerse yourself in the excitement of this classic card game!
         </p>
-        <button class="new-game-btn button">New game</button>
+        <form class="player-form" id="player-form">
+          <label for="player-name-input"></label>
+          <input type="text" name="player-name" id="player-name-input" placeholder="Enter your Nic-name">
+          <button class="new-game-btn button" type="submit">Let's play</button>
+        </form>
+
       </section>
 
 

@@ -130,7 +130,7 @@ body {
 .hero-section {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -168,6 +168,26 @@ body {
   transition: background-color 0.3s;
 }
 
+.player-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+#player-name-input{
+  height: 46px;
+  width: 300px;
+  background-color: var(--btn-bg-color);
+  border: 2px solid var(--white-color);
+  box-shadow: 0 0 12px var(--hover-color);
+  border-radius: 10px;
+  font-size: 18px;
+  color: var(--white-color);
+  text-align: center;
+}
+
 .new-game-btn:hover {
   background-color: var(--btn-bg-hover-color);
 }
@@ -196,7 +216,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  background-color: var(--green-color);
+  background-color: rgba(40, 73, 5, 0.589);
   border-radius: 50px;
   display: flex;
   flex-direction: column;
@@ -270,6 +290,12 @@ body {
   left: 0%;
 }
 
+.game-section h2 {
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: 800;
+  color: var(--white-color);
+}
 
 .dealer-cards {
   display: flex;

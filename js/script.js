@@ -11,6 +11,26 @@ const dealerTableScore = document.querySelector(".dealer-score");
 const gameScoreDealer = document.querySelector(".game-score-dealer");
 const gameScorePlayer = document.querySelector(".game-score-player");
 const exitGame = document.querySelector(".exit-game");
+const input = document.querySelector("#player-name-input");
+const gamer = document.querySelector(".gamer");
+let playerName= "Player";
+
+/*
+*https://fedingo.com/how-to-prevent-page-refresh-on-form-submit/
+*
+*/
+
+var form = document.getElementById("player-form");
+function handleForm(event) { event.preventDefault();
+  console.log('-----event--------');
+  console.log(input.value);
+  if ((input.value.length>1)&&(input.value.length<16)){
+    playerName = input.value;
+  }
+  gamer.textContent = playerName;
+  console.log('-----event--------');
+} 
+form.addEventListener('submit', handleForm);
 
 
 /* ---  Modal How to play ---*/
@@ -28,11 +48,12 @@ newGameBtn.onclick = () => {
   gameSection.classList.add("active");
   startNewGame();
 };
-
 /* ---  Exit Game ---*/
 exitGame.onclick = () => {
   gameSection.classList.remove("active");
   console.log('Exit press');
+  clearTable();
+  saveScore();
 };
 
 
@@ -265,5 +286,10 @@ function clearTable() {
   gameOver = false;
   stayBtn.textContent = "STAY"
   hitBtn.textContent = "HIT";
+}
+
+function saveScore(){
+  gameScorePlayer.textContent="00";
+  gameScoreDealer.textContent="00";
 }
 /* ---  END Game Section ---*/
