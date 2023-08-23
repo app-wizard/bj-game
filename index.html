@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.6.0/modern-normalize.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,9 +18,8 @@
 <body>
   <header class="header">
     <div class="header-container">
-      <a href="#" class="logo link">Black Jack</a>
+      <a href="#" class="logo link">BlackJack</a>
       <nav class="main-nav">
-        <a class="link" href="#">Home</a>
         <a class="modal-lnk link" href="#">How to play</a>
         <a class="link" href="#">Top score</a>
       </nav>
@@ -30,6 +29,7 @@
   <main class="main">
     <div class="section-wraper">
       <section class="game-section">
+        <button class="exit-game"> Exit <img src="..\image\power.svg" alt="" width="50" height="50"></button>
         <h2>Dealer: <span class="dealer-score"></span></h2>
         <div class="dealer-cards">
           <img class="back-card" src="./image/cards/BACK.png" alt="" />
@@ -38,12 +38,12 @@
         <div class="count">
           <div class="count-player">
             <p class="counter game-score-player">00</p>
-            <p>Player</p>
+            <p class="count-title">Player</p>
           </div>
 
           <div class="count-dealer">
             <p class="counter game-score-dealer">00</p>
-            <p>Dealer</p>
+            <p class="count-title">Dealer</p>
           </div>
         </div>
 
@@ -66,7 +66,7 @@
         <button class="new-game-btn button">New game</button>
       </section>
 
-      
+
     </div>
   </main>
 

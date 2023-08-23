@@ -10,6 +10,8 @@ const playerTableScore = document.querySelector(".player-score");
 const dealerTableScore = document.querySelector(".dealer-score");
 const gameScoreDealer = document.querySelector(".game-score-dealer");
 const gameScorePlayer = document.querySelector(".game-score-player");
+const exitGame = document.querySelector(".exit-game");
+
 
 /* ---  Modal How to play ---*/
 howToPlayLink.onclick = () => {
@@ -26,6 +28,13 @@ newGameBtn.onclick = () => {
   gameSection.classList.add("active");
   startNewGame();
 };
+
+/* ---  Exit Game ---*/
+exitGame.onclick = () => {
+  gameSection.classList.remove("active");
+  console.log('Exit press');
+};
+
 
 
 function startNewGame() {
@@ -183,6 +192,7 @@ stayBtn.onclick = () => {
     document.querySelector(".back-card").src = "./image/cards/" + dealerCards[0] + ".png";
     dealerTableScore.innerHTML = dealerFinalSum;
     gameOver = true;
+    moreThan21 = true;
     hitBtn.textContent = "---";
     stayBtn.textContent = "NEW GAME"
   }
