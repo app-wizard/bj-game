@@ -16,7 +16,9 @@ const gameScorePlayer = document.querySelector(".game-score-player");
 const exitGame = document.querySelector(".exit-game");
 const input = document.querySelector("#player-name-input");
 const gamer = document.querySelector(".gamer");
-let playerName= "Player";
+const topScoreList = document.querySelector(".top-score-list");
+
+let playerName = "Player";
 
 /*
 *https://fedingo.com/how-to-prevent-page-refresh-on-form-submit/
@@ -24,15 +26,16 @@ let playerName= "Player";
 */
 
 var form = document.getElementById("player-form");
-function handleForm(event) { event.preventDefault();
+function handleForm(event) {
+  event.preventDefault();
   console.log('-----event--------');
   console.log(input.value);
-  if ((input.value.length>1)&&(input.value.length<16)){
+  if ((input.value.length > 1) && (input.value.length < 16)) {
     playerName = input.value;
   }
   gamer.textContent = playerName;
   console.log('-----event--------');
-} 
+}
 form.addEventListener('submit', handleForm);
 
 
@@ -49,6 +52,22 @@ gotItBtn.onclick = () => {
 /* ---  Modal TOPSCORE ---*/
 topScoreLnk.onclick = () => {
   modalScore.classList.add("active");
+  topScoreList.innerHTML="";
+
+  let fromLocalStorage = fromJson(getData());
+  if (fromLocalStorage) {
+    let len = (fromLocalStorage.length >= 10) ? 10 : fromLocalStorage.length;
+    for (let i = 0; i < len; i++) {
+      let liItem = document.createElement("li");
+      liItem.textContent = fromLocalStorage[i];
+      topScoreList.append(liItem);
+    }
+  } else {
+    let liItem = document.createElement("li");
+    liItem.textContent = 'Zero game information found let\'s play';
+    topScoreList.append(liItem);
+  }
+
 };
 
 gotItScoreBtn.onclick = () => {
@@ -301,12 +320,12 @@ function clearTable() {
   hitBtn.textContent = "HIT";
 }
 
-function saveScore(){
+function saveScore() {
   let localData = [];
-  let gameScoreForSave = `GAMER ${playerName} - ${gameScorePlayer.textContent} VS ${gameScoreDealer.textContent} - COMPUTER`;
+  let gameScoreForSave = `${playerName}  -  ${gameScorePlayer.textContent}  -vs-  ${gameScoreDealer.textContent}  -  PC`;
   let fromLocalStorage = fromJson(getData());
 
-  if (fromLocalStorage){
+  if (fromLocalStorage) {
     console.log('Find Data in local storage');
     localData = fromLocalStorage;
   } else {
@@ -314,20 +333,20 @@ function saveScore(){
     console.log('NEW DATA TO LOCAL STORAGE');
   }
 
-  let intScorePlayer= parseInt(gameScorePlayer.textContent);
-  let intScoreDealer= parseInt(gameScoreDealer.textContent);
+  let intScorePlayer = parseInt(gameScorePlayer.textContent);
+  let intScoreDealer = parseInt(gameScoreDealer.textContent);
 
-  if ((intScorePlayer>0)||(intScoreDealer>0)){
+  if ((intScorePlayer > 0) || (intScoreDealer > 0)) {
     localData.push(gameScoreForSave);
   } else {
-    gameScorePlayer.textContent="00";
-    gameScoreDealer.textContent="00";
+    gameScorePlayer.textContent = "00";
+    gameScoreDealer.textContent = "00";
     return;
   }
- 
+
   saveData(toJson(localData));
-  gameScorePlayer.textContent="00";
-  gameScoreDealer.textContent="00";
+  gameScorePlayer.textContent = "00";
+  gameScoreDealer.textContent = "00";
 
 }
 

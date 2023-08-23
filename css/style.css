@@ -573,7 +573,6 @@ transform: scale(1.3);
 
   .modal-how-to-play {
     width: 80%;
-
   }
 
   .modal-how-to-play p {
@@ -584,6 +583,15 @@ transform: scale(1.3);
   .modal-how-to-play h2 {
     font-size: 36px;
   }
+
+  .modal-score h2 {
+    font-size: 36px;
+  }
+
+  .modal-score{
+    width: 80%;
+  }
+
 }
 
 
@@ -606,7 +614,6 @@ transform: scale(1.3);
     max-width: 90%;
     font-size: 14px;
   }
-
   .hero-header {
     font-size: 32px;
   }
@@ -619,7 +626,6 @@ transform: scale(1.3);
   .counter {
     font-size: 24px;
   }
-
   .count-title {
     font-size: 12px;
   }
@@ -627,16 +633,21 @@ transform: scale(1.3);
   .modal-how-to-play {
     width: 90%;
   }
-
   .modal-how-to-play p {
     font-size: 12px;
     line-height: 1.3;
   }
-
   .modal-how-to-play h2 {
     font-size: 28px;
   }
 
+  .modal-score h2 {
+    font-size: 28px;
+  }
+
+  .modal-score{
+    width: 90%;
+  }
 }
 
 
