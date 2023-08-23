@@ -90,6 +90,23 @@ body {
   gap: 40px;
 }
 
+.header-icon{
+display: none;
+}
+
+.burger-btn{
+  background-color: transparent;
+  color:var(--white-color); 
+  border: none;
+  outline: none;
+  font-size: 20px;
+  transition: scale 0.3s;
+}
+
+.burger-btn:hover{
+  transform: scale(1.3);
+}
+
 .main-nav a {
   font-size: 18px;
   color: var(--white-color);
@@ -147,7 +164,7 @@ body {
   text-align: center;
 }
 
-.hero-section h1 {
+.hero-header {
   font-family: var(--logo-font);
   font-size: 55px;
   text-transform: capitalize;
@@ -158,7 +175,7 @@ body {
 }
 
 .new-game-btn {
-  height: 55px;
+  height: 50px;
   width: 200px;
   background-color: var(--btn-bg-color);
   border: 2px solid var(--white-color);
@@ -175,13 +192,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 #player-name-input{
-  height: 46px;
+  height: 50px;
   width: 300px;
-  background-color: var(--btn-bg-color);
+  background-color:   #373e573b;
   border: 2px solid var(--white-color);
   box-shadow: 0 0 12px var(--hover-color);
   border-radius: 10px;
@@ -412,9 +429,49 @@ transform: scale(1.3);
 }
 /* ========== END GAME SECTION ========== */
 
-/* ========== MOBILE ADAPTIVE ========== */
+/* ========== FOOTER ========== */
+.footer-wrap{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  bottom: 10px;
+  left: 50%;
+  gap: 8px;
+  transform: translate(-50%, 0%);
+}
 
+.social-networks{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
 
+.follow-us {
+  font-family:  var( --logo-font);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.social-networks i {
+  font-size: 200%;
+  margin: 1%;
+  padding: 5%;
+  color: #ffffff;
+  transition: scale 0.3s, color 0.3s;
+}
+
+.social-networks i:hover {
+  color: var(--hover-color);
+  transform: scale(1.3);
+}
+/* ========== END FOOTER ========== */
+
+/* ========== ADAPTIVE ========== */
 
 @media only screen and (max-width: 990px) {
   body {
@@ -426,6 +483,10 @@ transform: scale(1.3);
     max-width: 60%;
   }
   
+  .hero-header {
+    font-size: 42px;
+  }
+
   .count {
     width: 180px;
     height: 90px;
@@ -457,15 +518,28 @@ transform: scale(1.3);
 
 
 @media only screen and (max-width: 600px) {
+
   body {
     --cardHeight: calc(175px*0.5);
     --cardWidth: calc(125px*0.5);
   }
 
-  .hero-story {
-    max-width: 90%;
+  .header-icon{
+    display: block;
   }
 
+  .main-nav{
+    display: none;
+  }
+
+  .hero-story {
+    max-width: 90%;
+    font-size: 14px;
+  }
+
+  .hero-header {
+    font-size: 32px;
+  }
   .count {
     width: 150px;
     height: 70px;
@@ -482,7 +556,6 @@ transform: scale(1.3);
 
   .modal-how-to-play {
     width: 90%;
-
   }
 
   .modal-how-to-play p {
@@ -497,4 +570,4 @@ transform: scale(1.3);
 }
 
 
-/* ========== END MOBILE ADAPTIVE ========== */
+/* ========== END ADAPTIVE ========== */
