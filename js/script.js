@@ -289,7 +289,48 @@ function clearTable() {
 }
 
 function saveScore(){
+  let localData = [];
+  let gameScoreForSave = `GAMER ${playerName} - ${gameScorePlayer.textContent} VS ${gameScoreDealer.textContent} - COMPUTER`;
+  let fromLocalStorage = fromJson(getData());
+
+  if (fromLocalStorage){
+    console.log('Find Data in local storage');
+    localData = fromLocalStorage;
+  } else {
+    localData = [];
+    console.log('NEW DATA TO LOCAL STORAGE');
+  }
+
+  let intScorePlayer= parseInt(gameScorePlayer.textContent);
+  let intScoreDealer= parseInt(gameScoreDealer.textContent);
+
+  if ((intScorePlayer>0)||(intScoreDealer>0)){
+    localData.push(gameScoreForSave);
+  } else {
+    gameScorePlayer.textContent="00";
+    gameScoreDealer.textContent="00";
+    return;
+  }
+ 
+  saveData(toJson(localData));
   gameScorePlayer.textContent="00";
   gameScoreDealer.textContent="00";
+
+}
+
+function toJson(data) {
+  return JSON.stringify(data);
+}
+
+function fromJson(data) {
+  return JSON.parse(data);
+}
+
+function saveData(data) {
+  return localStorage.setItem('bjgame', data);
+}
+
+function getData() {
+  return localStorage.getItem('bjgame');
 }
 /* ---  END Game Section ---*/
