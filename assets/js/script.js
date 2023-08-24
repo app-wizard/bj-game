@@ -27,7 +27,9 @@ function handleForm(event) {
   event.preventDefault();
   if ((input.value.length > 1) && (input.value.length < 16)) {
     playerName = input.value;
-  }
+    gameSection.classList.add("active");
+    startNewGame();
+  } 
   gamer.textContent = playerName;
 }
 form.addEventListener('submit', handleForm);
@@ -76,10 +78,11 @@ topScoreLnk.onclick = () => {
   /* --- END Modal TOPSCORE ---*/
 
   /* ---  New Game plus Exit ---*/
-  newGameBtn.onclick = () => {
-    gameSection.classList.add("active");
-    startNewGame();
-  };
+  // newGameBtn.onclick = () => {
+  //   gameSection.classList.add("active");
+  //   startNewGame();
+  // };
+
   function startNewGame() {
     buildCards();
     dealCards();
