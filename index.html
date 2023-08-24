@@ -3,15 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/image/icon/favicon.ico">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.6.0/modern-normalize.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.6.0/modern-normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@800&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./css/style.css" />
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
   <title>BlackJack Game</title>
   <meta name="description"
     content="This is a classic blackjack card game. Made in order to demonstrate the skills acquired with the Code Institute. The game is made by implementing key HTML elements, styling with CSS and enabling JavaScript for game logic.">
@@ -20,6 +19,7 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header class="header">
     <div class="header-container">
       <a href="#" class="logo link">BlackJack</a>
@@ -32,38 +32,38 @@
       </div>
     </div>
   </header>
+  <!--END Header -->
 
   <main class="main">
     <div class="section-wraper">
+
+      <!-- Game-section -->
       <section class="game-section">
-        <button class="exit-game"> Exit <img src=".\image\power.svg" alt="" width="45" height="45"></button>
+        <button class="exit-game"> <img src="./image/exit.svg" alt="exit button" width="45" height="45"></button>
         <h2>Dealer: <span class="dealer-score"></span></h2>
         <div class="dealer-cards">
-          <img class="back-card" src="./image/cards/BACK.png" alt="" />
+          <img class="back-card" src="./image/cards/BACK.png" alt="Card back">
         </div>
-
         <div class="count">
           <div class="count-player">
             <p class="counter game-score-player">00</p>
             <p class="count-title">Player</p>
           </div>
-
           <div class="count-dealer">
             <p class="counter game-score-dealer">00</p>
             <p class="count-title">Dealer</p>
           </div>
         </div>
-
         <h2> <span class="gamer"></span>: <span class="player-score"></span></h2>
         <div class="player-cards"></div>
         <div class="btn-wraper">
           <button class="hit-btn button">hit</button>
           <button class="stay-btn button">stay</button>
         </div>
-
       </section>
+      <!-- Game-section -->
 
-
+      <!-- Hero-section -->
       <section class="hero-section">
         <h1 class="hero-header">classic card game</h1>
         <p class="hero-story">
@@ -75,15 +75,14 @@
           <input type="text" name="player-name" id="player-name-input" placeholder="Enter your Nic-name">
           <button class="new-game-btn button" type="submit">Let's play</button>
         </form>
-
       </section>
-
+      <!-- END Hero-section -->
 
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
-
     <ul class="footer-wrap list">
       <li>
         <p class="follow-us">FOLLOW US</p>
@@ -100,10 +99,10 @@
         <p class="copyright">COPYRIGHT © 2023</p>
       </li>
     </ul>
-
   </footer>
+  <!-- END Footer -->
 
-
+  <!-- Modal HowToPlay -->
   <div class="modal">
     <div class="modal-how-to-play">
       <h2>How to play</h2>
@@ -127,7 +126,9 @@
       <button class="got-it-btn button">Got it!</button>
     </div>
   </div>
+  <!--END Modal HowToPlay -->
 
+  <!-- Modal TopScore -->
   <div class="modalScoreBack">
     <div class="modal-score">
       <h2>Top Score Table</h2>
@@ -137,12 +138,11 @@
       <button class="Clean-btn button">Clear Results</button>
     </div>
   </div>
+  <!--END Modal TopScore -->
 
   <!-- font awesome script -->
   <script src="https://kit.fontawesome.com/1c18c1abf8.js" crossorigin="anonymous"></script>
-
   <script src="./js/script.js"></script>
 </body>
-
 
 </html>
