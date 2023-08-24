@@ -115,12 +115,12 @@ topScoreLnk.onclick = () => {
       "8",
       "9",
       "10",
-      "J",
-      "Q",
-      "K",
-      "A",
+      "j",
+      "q",
+      "k",
+      "a",
     ];
-    let types = ["C", "D", "H", "S"];
+    let types = ["c", "d", "h", "s"];
     let cards = [];
     value.forEach((v) => {
       types.forEach((t) => {
@@ -259,7 +259,7 @@ topScoreLnk.onclick = () => {
   }
 
   function clearTable() {
-    document.querySelector(".dealer-cards").innerHTML = '<img class="back-card" src="./image/cards/BACK.png" alt=""/>';
+    document.querySelector(".dealer-cards").innerHTML = '<img class="back-card" src="./image/cards/back.png" alt=""/>';
     document.querySelector(".player-cards").innerHTML = "";
     dealerTableScore.textContent = "";
     dealerSum = 0;
