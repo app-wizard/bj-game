@@ -335,7 +335,6 @@ display: none;
   background-color: var(--btn-bg-color);
   border: 2px solid var(--white-color);
   box-shadow: 0 0 12px var(--hover-color);
-  border-radius: 10px;
   outline: none;
   border-radius: 8px;
   font-size: 18px;
@@ -348,6 +347,24 @@ display: none;
   background-color: var(--btn-bg-hover-color);
 }
 
+.Clean-btn{
+  align-self: end;
+
+  width: 130px;
+  height: 30px;
+  background-color: rgba(255, 0, 0, 0.3);
+  border: 1px solid var(--white-color);
+  outline: none;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--white-color);
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+}
+
+.Clean-btn:hover{
+  background-color: rgba(255, 0, 0, 0.8);
+}
 /* ========== END TOPSCORE ========== */
 
 
