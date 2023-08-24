@@ -139,7 +139,7 @@ topScoreLnk.onclick = () => {
     dealerCards.push(nextCard);
     dealerSum += calcValue(nextCard);
     dealerAce += checkAce(nextCard);
-    dealerFinalSum = (dealerSum < 21) ? dealerSum : sumMinusAce(dealerSum, dealerAce);
+    dealerFinalSum = (dealerSum <= 21) ? dealerSum : sumMinusAce(dealerSum, dealerAce);
 
     while (dealerFinalSum < 17) {
       nextCard = gameCards.pop();
@@ -148,7 +148,7 @@ topScoreLnk.onclick = () => {
       dealerCards.push(nextCard);
       dealerSum += calcValue(nextCard);
       dealerAce += checkAce(nextCard);
-      dealerFinalSum = (dealerSum < 21) ? dealerSum : sumMinusAce(dealerSum, dealerAce);
+      dealerFinalSum = (dealerSum <= 21) ? dealerSum : sumMinusAce(dealerSum, dealerAce);
       document.querySelector(".dealer-cards").append(dealerCardImg);
     }
 
@@ -174,7 +174,7 @@ topScoreLnk.onclick = () => {
 
       playerSum += calcValue(nextCard);
       playerAce += checkAce(nextCard);
-      playerFinalSum = (playerSum < 21) ? playerSum : sumMinusAce(playerSum, playerAce);
+      playerFinalSum = (playerSum <= 21) ? playerSum : sumMinusAce(playerSum, playerAce);
       playerTableScore.innerHTML = playerFinalSum;
       document.querySelector(".player-cards").append(playerCardImg);
 
