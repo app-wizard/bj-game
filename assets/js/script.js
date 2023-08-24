@@ -278,7 +278,7 @@ topScoreLnk.onclick = () => {
 
   function saveScore() {
     let localData = [];
-    let gameScoreForSave = `${playerName}___${gameScorePlayer.textContent} -vs- ${gameScoreDealer.textContent}`;
+    let gameScoreForSave = `${playerName}___${gameScorePlayer.textContent} -vs- ${gameScoreDealer.textContent}___Bot`;
     let fromLocalStorage = fromJson(getData());
     if (fromLocalStorage) {
       localData = fromLocalStorage;
