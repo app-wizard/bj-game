@@ -130,7 +130,7 @@ body {
 /* ========== MAIN ========== */
 .main {
   min-height: 100vh;
-  background-image: url("../image/main-bg2.jpg");
+  background-image: url("../img/main-bg2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -223,7 +223,7 @@ body {
   height: 100vh;
   background-color: var(--green-color);
   background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
-    url("../image/game-bg.jpg");
+    url("../img/game-bg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -309,7 +309,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-image: url(../image/vs.jpg);
+  background-image: url("../img/vs.jpg");
   border-radius: 25px;
   border: 3px solid wheat;
 }

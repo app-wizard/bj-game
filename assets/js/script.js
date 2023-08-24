@@ -141,7 +141,7 @@ topScoreLnk.onclick = () => {
     while (dealerFinalSum < 17) {
       nextCard = gameCards.pop();
       let dealerCardImg = document.createElement("img");
-      dealerCardImg.src = "./image/cards/" + nextCard + ".png";
+      dealerCardImg.src = "./assets/img/cards/" + nextCard + ".png";
       dealerCards.push(nextCard);
       dealerSum += calcValue(nextCard);
       dealerAce += checkAce(nextCard);
@@ -156,7 +156,7 @@ topScoreLnk.onclick = () => {
       playerCards.push(nextCard);
       playerFinalSum = (playerSum <= 21) ? playerSum : sumMinusAce(playerSum, playerAce);
       let playerCardImg = document.createElement("img");
-      playerCardImg.src = "./image/cards/" + nextCard + ".png";
+      playerCardImg.src = "./assets/img/cards/" + nextCard + ".png";
       document.querySelector(".player-cards").append(playerCardImg);
     }
     playerTableScore.innerHTML = playerFinalSum;
@@ -166,7 +166,7 @@ topScoreLnk.onclick = () => {
     if (!moreThan21) {
       let playerCardImg = document.createElement("img");
       nextCard = gameCards.pop();
-      playerCardImg.src = "./image/cards/" + nextCard + ".png";
+      playerCardImg.src = "./assets/img/cards/" + nextCard + ".png";
       playerCards.push(nextCard);
 
       playerSum += calcValue(nextCard);
@@ -202,7 +202,7 @@ topScoreLnk.onclick = () => {
         gameScoreDealer.textContent = parseInt(gameScoreDealer.textContent) + 1;
       }
 
-      document.querySelector(".back-card").src = "./image/cards/" + dealerCards[0] + ".png";
+      document.querySelector(".back-card").src = "./assets/img/cards/" + dealerCards[0] + ".png";
       dealerTableScore.innerHTML = dealerFinalSum;
       gameOver = true;
       moreThan21 = true;
@@ -227,7 +227,7 @@ topScoreLnk.onclick = () => {
   function calcValue(card) {
     data = card[0];
     if (isNaN(data)) {
-      if (data == "A") {
+      if (data == "a") {
         return 11;
       } else {
         return 10;
@@ -241,7 +241,7 @@ topScoreLnk.onclick = () => {
   }
 
   function checkAce(card) {
-    if (card[0] == "A") {
+    if (card[0] == "a") {
       return 1;
     }
     return 0;
@@ -259,7 +259,7 @@ topScoreLnk.onclick = () => {
   }
 
   function clearTable() {
-    document.querySelector(".dealer-cards").innerHTML = '<img class="back-card" src="./image/cards/back.png" alt=""/>';
+    document.querySelector(".dealer-cards").innerHTML = '<img class="back-card" src="./assets/img/cards/back.png" alt="Back card"/>';
     document.querySelector(".player-cards").innerHTML = "";
     dealerTableScore.textContent = "";
     dealerSum = 0;
