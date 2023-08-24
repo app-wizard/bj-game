@@ -19,6 +19,7 @@ const gamer = document.querySelector(".gamer");
 const topScoreList = document.querySelector(".top-score-list");
 const cleanResult = document.querySelector(".Clean-btn");
 const BurgerBtn = document.querySelector(".burger-btn");
+const mainNav = document.querySelector(".main-nav");
 
 
 
@@ -42,6 +43,12 @@ function handleForm(event) {
 }
 form.addEventListener('submit', handleForm);
 
+/* ---  BurgerNENU ---*/
+BurgerBtn.onclick = () => {
+  mainNav.classList.toggle("active");
+};
+
+/* --- END BurgerNENU ---*/
 
 /* ---  Modal How to play ---*/
 howToPlayLink.onclick = () => {
