@@ -16,7 +16,7 @@ const input = document.querySelector("#player-name-input");
 const gamer = document.querySelector(".gamer");
 const topScoreList = document.querySelector(".top-score-list");
 const cleanResult = document.querySelector(".Clean-btn");
-const BurgerBtn = document.querySelector(".burger-btn");
+const burgerBtn = document.querySelector(".burger-btn");
 const mainNav = document.querySelector(".main-nav");
 let playerName = "Player";
 
@@ -35,7 +35,7 @@ form.addEventListener('submit', handleForm);
 /* ---  END onSubmit-check ---*/
 
 /* ---  BurgerNENU ---*/
-BurgerBtn.onclick = () => {
+burgerBtn.onclick = () => {
   mainNav.classList.toggle("active");
 };
 /* --- END BurgerNENU ---*/
