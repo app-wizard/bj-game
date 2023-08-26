@@ -427,6 +427,7 @@ body {
   transform: translate(-50%, -50%);
   width: 50%;
   background-color: rgba(40, 73, 5, 0.589);
+  border: 3px solid var(--btn-golg-border);
   border-radius: 50px;
   display: flex;
   flex-direction: column;
@@ -496,6 +497,7 @@ body {
   transform: translate(-50%, -50%);
   width: 50%;
   background-color: rgba(40, 73, 5, 0.589);
+  border: 3px solid var(--btn-golg-border);
   border-radius: 50px;
   display: flex;
   flex-direction: column;
@@ -586,7 +588,7 @@ body {
   }
 
   .modal-how-to-play p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.4;
   }
 
