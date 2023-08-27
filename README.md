@@ -107,13 +107,13 @@ During the testing process, errors in the use of styles in samsung mobile browse
 
 ## Issues and their solutions
 
-* I ran into problems maintaining visual appeal when resizing the screen, as it was extremely important to ensure a uniform style on a wide range of devices, from iPhone 4 to 4K high-resolution monitors and other devices. However, after many factors, I have successfully achieved the desired result by adapting the content for screens of different sizes without compromising the aesthetics of the website.
-
 * During testing, it was revealed that the overflow: hidden; directive for the body tag does not work correctly on Samsung browsers, while it worked as expected in Chrome Safari and Mozilla browsers... the solution was to change the styles for the appearance of the game screen, because the use of the style:
 / .section-wrapper {width: 200%;} /
 led to the appearance of scrollbars in the Samsung browser despite / body { overflow: hidden;} /
 
 * Another issue that came up during testing was the effectiveness of the .model directives backdrop-filter: blur(15px); in Safari browsers. The remedy was discovered by investigating comparable problems posted on StackOverflow. An additional directive, -webkit-backdrop-filter: blur(15px);, was introduced to rectify the situation. As a result, the desired blur effect when the modal window emerged started functioning as intended across all browsers subjected to testing.
+
+* Furthermore, while undergoing testing, a flaw was uncovered in the scoring algorithm. The resolution proved to be straightforward: the error stemmed from utilizing the ">" operator instead of ">=" operator. This oversight resulted in subpar outcomes whenever the dealer's point total reached 17. Naturally, this underscores the significance of employing automated tests, particularly when evaluating business logic. I anticipate that we will delve deeper into this subject in upcoming projects.
 
 # Deployment 
 
@@ -124,3 +124,27 @@ led to the appearance of scrollbars in the Samsung browser despite / body { over
     * Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
 Click [here](https://app-wizard.github.io/bj-game/) to view my GitHub repository.
+## Content
+My selection of the visual elements for my website was informed by exploring thematic content on the website https://www.freepik.com/. Drawing inspiration from the thematic concepts showcased in their content, I developed a design that is both unique and exceptional, aligned with my envisioned concept of a platform for gaming and leisure. By infusing my own creative ideas into this process, I successfully attained a visually dynamic and matchless final outcome, adeptly portraying my distinct perspective on the experience of playing blackjack.
+
+## Media
+Design Ideas [behance.net](https://www.behance.net/).
+
+Images where taken from [freepik.com](https://www.freepik.com/).
+
+Icons where taken from [Font Awesome](https://fontawesome.com/).
+
+
+## Code
+Fonts were chosen on [GoogleFonts](https://fonts.google.com/)
+
+I adapted social buttons from [Love Running](https://github.com/app-wizard/love-running)
+
+Colours were chosen by [color.adobe.com](https://color.adobe.com/create/color-wheel).
+
+Fisher-Yates Sorting Algorithm [www.freecodecamp.org](https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript).
+
+WebKit framework [https://developer.apple.com/](https://developer.apple.com/documentation/webkit).
+
+
+
