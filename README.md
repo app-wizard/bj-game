@@ -69,3 +69,58 @@ The game incorporates scoring and result comparison, encompassing all possible o
 To sustain user engagement and prevent annoyance, the game refrains from utilizing sound or pop-ups for notifications, given the game's quick session duration. The game area's background is subtly darkened using a gradient, reducing eye strain and accentuating the game interface. The game completion button is conveniently positioned in the upper-right corner, akin to the familiar layout of the Windows operating system. This button concludes the gaming session while saving the results locally. Furthermore, a check ensures that unchanged scoreboard results (00-00) are not saved to prevent cluttering the results table with zero values.
 
 Adaptability has been integrated into this screen as well. The dimensions of game elements are contingent on the screen width, ensuring a visually appealing presentation on diverse devices such as mobile phones, tablets, desktop computers, and laptops.
+
+# Testing
+
+## HTML Validator 
+
+The code passes html validation (https://validator.w3.org/) without errors and warnings
+
+![Responsive image](/assets/img/readme/html-checker.jpg)
+
+## CSS Validator
+
+During the development process, I made several adjustments to the CSS code in order to ensure that it passed CSS validation without any errors. By continuously refactoring the CSC code, I was able to address any potential issues and maintain a clean and error-free stylesheet.
+Css validator - https://jigsaw.w3.org/css-validator/validator
+
+![Responsive image](/assets/img/readme/css-checker.jpg)
+
+## JS Validator
+
+The validator showed errors that for some reason are not highlighted in VS-code, these were missing characters ";" or inappropriately used ";" . All errors have been fixed the code works without errors and warnings in the browser console
+JS Validator- https://jshint.com/
+![Responsive image](/assets/img/readme/js-check.png)
+
+## Lighthouse
+
+To assess the loading speed of my website, I utilized Google DevTools Lighthouse to conduct performance testing. In order to enhance the download performance, I made necessary adjustments such as resizing the images. This approach allowed me to strike a balance between image quality and download speed, ensuring that the website loads efficiently without compromising visual appeal.
+
+![Responsive image](/assets/img/readme/light-house.jpg)
+
+## Manual testing
+
+I thoroughly tested and developed this website using Mac Safari as my primary browser. However, I also verified its functionality and compatibility on Chrome and Microsoft Edge, and I'm pleased to confirm that it works perfectly on all these platforms.
+
+Additionally, I performed tests on mobile devices, specifically an iPhone 11 and Samsung S22. For other mobile devices, I utilized Google DevTools to simulate their displays and ensure optimal responsiveness and appearance. This comprehensive testing approach guarantees a seamless and enjoyable user experience across different browsers and devices.
+
+During the testing process, errors in the use of styles in samsung mobile browsers and also in Safari browser were identified. More detailed information about the errors will be presented below in the Issues and their solutions section.
+
+## Issues and their solutions
+
+* I ran into problems maintaining visual appeal when resizing the screen, as it was extremely important to ensure a uniform style on a wide range of devices, from iPhone 4 to 4K high-resolution monitors and other devices. However, after many factors, I have successfully achieved the desired result by adapting the content for screens of different sizes without compromising the aesthetics of the website.
+
+* During testing, it was revealed that the overflow: hidden; directive for the body tag does not work correctly on Samsung browsers, while it worked as expected in Chrome Safari and Mozilla browsers... the solution was to change the styles for the appearance of the game screen, because the use of the style:
+/ .section-wrapper {width: 200%;} /
+led to the appearance of scrollbars in the Samsung browser despite / body { overflow: hidden;} /
+
+* Another issue that came up during testing was the effectiveness of the .model directives backdrop-filter: blur(15px); in Safari browsers. The remedy was discovered by investigating comparable problems posted on StackOverflow. An additional directive, -webkit-backdrop-filter: blur(15px);, was introduced to rectify the situation. As a result, the desired blur effect when the modal window emerged started functioning as intended across all browsers subjected to testing.
+
+# Deployment 
+
+* The website was deployed to GitHub. The steps to deploy are as follows:
+    * In the GitHub repository, navigate to the Settings tab
+    * Scroll down to GitHub pages and click "Check it out here!"
+    * Under "Source" ensure you select "main"
+    * Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+Click [here](https://app-wizard.github.io/bj-game/) to view my GitHub repository.
